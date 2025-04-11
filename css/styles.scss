@@ -1,0 +1,79 @@
+@use 'color';
+@use 'font';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Modern CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Remove list styles */
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* Set core body defaults */
+  html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  
+  /* Make images easier to work with */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* Remove all animations and transitions for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Anchor links */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Remove outline on focus for non-keyboard users */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  /* Restore outline for keyboard users */
+  :focus-visible {
+    outline: 2px solid #4d90fe;
+    outline-offset: 2px;
+  }
+  
+  /* Remove default button styles */
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Remove default form styles */
+  input, textarea {
+    border: none;
+    outline: none;
+  }
+
+  //--------------------- FINE RESET-------------------
+.logo {
+    width: 50px;
+}
