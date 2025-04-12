@@ -1,5 +1,5 @@
-@use 'color';
-@use 'font';
+@import 'color';
+@import 'font';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Modern CSS Reset */
@@ -74,6 +74,104 @@
   }
 
   //--------------------- FINE RESET-------------------
-.logo {
+
+  
+  body {
+    font-family: $header-font;
+    background-color: $backgroundLight;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+
+ .header {
+  color: $text;
+   background-color: $backgroundDark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+
+  .logo-hbg-section {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+  //stile hamburger-contenitore
+  .hbg-container {
+    width: 50px;
+    height: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    //stile delle line hamburger menu
+     span { 
+      width: 30px;
+      height: 4px;
+      background-color: $text;
+      border-radius: 5px;
+    }
+  }
+  .logo {
     width: 50px;
 }
+  .menu-container {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: $backgroundDark;
+    padding: 10px;
+
+  }
+  .menu-container.active {
+    display: block; /* Visibile quando attivo */
+  }
+  .menu-list {
+    padding: 10px;
+  }
+
+  li {
+    margin: 10px 0 0 0;
+    width: 100%;
+  }
+  a {
+    width: 100%;
+    display: block;
+    padding: 5px 0;
+    font-size: 1.5rem;
+    position: relative; /* Importante per posizionare la linea */
+    transition: color 0.5s;
+  }
+
+  //------animazione link menu------//
+  // Creiamo la linea con pseudo-elemento
+
+  a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: $text;
+    transition: width 0.3s ease; 
+  }
+ }
+
+ //Animiamo la linea all'hover
+ a:hover::after {
+  width: 100%; /* Espandi fino alla larghezza completa */
+}
+a:hover {
+  color: darken($text, 15%); /* Scurisce leggermente il testo all'hover */
+}
+
+

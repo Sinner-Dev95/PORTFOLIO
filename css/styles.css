@@ -69,6 +69,87 @@ input, textarea {
   outline: none;
 }
 
-.logo {
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #ECEFF4;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  color: #D8DEE9;
+  background-color: #2E3440;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+}
+.header .logo-hbg-section {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.header .hbg-container {
   width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.header .hbg-container span {
+  width: 30px;
+  height: 4px;
+  background-color: #D8DEE9;
+  border-radius: 5px;
+}
+.header .logo {
+  width: 50px;
+}
+.header .menu-container {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #2E3440;
+  padding: 10px;
+}
+.header .menu-container.active {
+  display: block; /* Visibile quando attivo */
+}
+.header .menu-list {
+  padding: 10px;
+}
+.header li {
+  margin: 10px 0 0 0;
+  width: 100%;
+}
+.header a {
+  width: 100%;
+  display: block;
+  padding: 5px 0;
+  font-size: 1.5rem;
+  position: relative; /* Importante per posizionare la linea */
+  transition: color 0.5s;
+}
+.header a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #D8DEE9;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%; /* Espandi fino alla larghezza completa */
+}
+
+a:hover {
+  color: #a7b5cd; /* Scurisce leggermente il testo all'hover */
 }/*# sourceMappingURL=styles.css.map */
